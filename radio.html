@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自定义的单选</title>
+</head>
+<style>
+.group_btn {
+  margin-top: 17px;
+}
+.type_div {
+  width: 90px;
+  height: 30px;
+  position: relative;
+  margin-bottom: 20px;
+}
+.type_div input[type="radio"] {
+	/*单选按钮默认状态*/
+  width: 90px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  opacity: 0;
+  z-index: 2;
+}
+.type_div input[type="radio"]:checked + div {
+	/*单选按钮选中状态，的处理*/
+  color: #c3d826;
+  border: 1px solid #c3d826;
+  border-radius: 5px;
+  background: none;
+  background-size: 12px;
+  transition: all 0.5s;
+}
+.type_div .label_type {
+	/*单选按钮中的文字*/
+  width: 90px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7a7a7a;
+  border-radius: 5px;
+  border: 1px solid #7a7a7a;
+  background-size: cover;
+  background: none;
+  background-size: 12px;
+  transition: all 0.5s;
+}
+</style>
+<body>
+	<div class="group_btn">
+		 <div class="type_div" >
+	        <input type="radio" class="type_rdo"  name="cargo"/>
+	            <div class="label_type"></div>
+	      </div>
+	      <div class="type_div" >
+	        <input type="radio" class="type_rdo"  name="cargo"/>
+	            <div class="label_type"></div>
+	      </div>
+	      <div class="type_div" >
+	        <input type="radio" class="type_rdo"  name="cargo"/>
+	            <div class="label_type"></div>
+	      </div>
+	      <div class="type_div" >
+	        <input type="radio" class="type_rdo"  name="cargo"/>
+	            <div class="label_type"></div>
+	      </div>
+	</div>
+	<script>
+		var labelType=document.getElementsByClassName('label_type')
+		var arr=['衣服','卫生用品','配件','化妆品']
+		for(var i=0;i<arr.length;i++){
+			labelType[i].innerText=arr[i]
+		}
+	</script>
+</body>
+</html>
